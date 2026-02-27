@@ -9,9 +9,9 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div className="space-y-6">
-            <h3 className="font-display text-3xl tracking-tighter">SOLE SOURCE</h3>
+            <h3 className="font-display text-3xl tracking-tighter">FPS FIGHTER</h3>
             <p className="text-white/60 text-sm leading-relaxed max-w-xs">
-              Your ultimate destination for authentic, premium sneakers. We curate the best from Nike, Adidas, Puma, and Jordan.
+              The world's first high-precision fighting game engine running at 10,000 logic updates per second.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="hover:text-neon-green transition-colors"><Instagram size={20} /></a>
@@ -21,15 +21,13 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* Shop */}
+          {/* Game */}
           <div>
-            <h4 className="font-bold text-sm tracking-widest uppercase mb-6">Shop</h4>
+            <h4 className="font-bold text-sm tracking-widest uppercase mb-6">Game</h4>
             <ul className="space-y-4 text-sm text-white/60">
-              <li><Link to="/shop" className="hover:text-white transition-colors">All Sneakers</Link></li>
-              <li><Link to="/shop?brand=Nike" className="hover:text-white transition-colors">Nike</Link></li>
-              <li><Link to="/shop?brand=Adidas" className="hover:text-white transition-colors">Adidas</Link></li>
-              <li><Link to="/shop?brand=Jordan" className="hover:text-white transition-colors">Jordan</Link></li>
-              <li><Link to="/shop?brand=Puma" className="hover:text-white transition-colors">Puma</Link></li>
+              <li><Link to="/" className="hover:text-white transition-colors">Play Now</Link></li>
+              <li><Link to="/about" className="hover:text-white transition-colors">Engine Specs</Link></li>
+              <li><Link to="/faq" className="hover:text-white transition-colors">Controls FAQ</Link></li>
             </ul>
           </div>
 
@@ -63,7 +61,7 @@ export const Footer = () => {
         </div>
 
         <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center text-xs text-white/40 space-y-4 md:space-y-0">
-          <p>© 2026 SOLE SOURCE. ALL RIGHTS RESERVED.</p>
+          <p>© 2026 FPS FIGHTER. ALL RIGHTS RESERVED.</p>
           <div className="flex space-x-8">
             <a href="#" className="hover:text-white">Privacy Policy</a>
             <a href="#" className="hover:text-white">Terms of Service</a>
