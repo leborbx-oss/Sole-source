@@ -1,0 +1,48 @@
+local WeaponDefs = {
+	AR_MK1 = {
+		Name = "Assault Rifle MK1",
+		Slot = "Primary",
+		Damage = 24,
+		HeadshotMultiplier = 2,
+		FireRate = 0.09,
+		Magazine = 30,
+		Reserve = 90,
+		Range = 500,
+		Auto = true,
+		Spread = 1.2,
+		Recoil = 1.8,
+		Price = 0,
+	},
+	PST_9 = {
+		Name = "Pistol 9",
+		Slot = "Secondary",
+		Damage = 20,
+		HeadshotMultiplier = 1.8,
+		FireRate = 0.2,
+		Magazine = 12,
+		Reserve = 48,
+		Range = 350,
+		Auto = false,
+		Spread = 0.8,
+		Recoil = 1.2,
+		Price = 0,
+	},
+	KNF_COMBAT = {
+		Name = "Combat Knife",
+		Slot = "Melee",
+		Damage = 55,
+		LungeDistance = 10,
+		FireRate = 0.5,
+		Price = 0,
+	},
+	GRN_HE = {
+		Name = "HE Grenade",
+		Slot = "Utility",
+		Damage = 90,
+		Radius = 18,
+		Fuse = 2.5,
+		Price = 200,
+	},
+}
+
+return WeaponDefs

@@ -18,3 +18,7 @@ View your app in AI Studio: https://ai.studio/apps/d4cc441c-a32d-4f13-97af-98dbe
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
+
+## Roblox RIVALS-style place source
+
+A complete Roblox Studio-ready source layout is included in [`roblox-place/`](roblox-place/README.md), with server/client Lua scripts, matchmaking simulation, FPS combat, economy, and setup instructions.
