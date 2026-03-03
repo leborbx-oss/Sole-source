@@ -32,8 +32,9 @@ export const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.path}
+                aria-current={location.pathname === link.path ? 'page' : undefined}
                 className={cn(
-                  "text-sm font-bold tracking-widest hover:text-brand-red transition-colors",
+                  "text-sm font-bold tracking-widest hover:text-brand-red transition-colors focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2 outline-none rounded-sm",
                   location.pathname === link.path ? "text-brand-red" : "text-black"
                 )}
               >
@@ -44,10 +45,17 @@ export const Navbar = () => {
 
           {/* Icons */}
           <div className="flex items-center space-x-5">
-            <button className="p-2 hover:bg-black/5 rounded-full transition-colors">
+            <button
+              aria-label="Search products"
+              className="p-2 hover:bg-black/5 rounded-full transition-colors focus-visible:ring-2 focus-visible:ring-brand-red outline-none"
+            >
               <Search size={20} />
             </button>
-            <Link to="/cart" className="p-2 hover:bg-black/5 rounded-full transition-colors relative">
+            <Link
+              to="/cart"
+              aria-label={`Shopping cart, ${totalItems} ${totalItems === 1 ? 'item' : 'items'}`}
+              className="p-2 hover:bg-black/5 rounded-full transition-colors relative focus-visible:ring-2 focus-visible:ring-brand-red outline-none"
+            >
               <ShoppingBag size={20} />
               {totalItems > 0 && (
                 <span className="absolute top-0 right-0 bg-brand-red text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full">
@@ -56,7 +64,10 @@ export const Navbar = () => {
               )}
             </Link>
             <button 
-              className="md:hidden p-2 hover:bg-black/5 rounded-full transition-colors"
+              aria-label={isOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isOpen}
+              aria-controls="mobile-menu"
+              className="md:hidden p-2 hover:bg-black/5 rounded-full transition-colors focus-visible:ring-2 focus-visible:ring-brand-red outline-none"
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -69,6 +80,7 @@ export const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id="mobile-menu"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -79,7 +91,11 @@ export const Navbar = () => {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className="block px-3 py-4 text-2xl font-display tracking-tight hover:text-brand-red"
+                  aria-current={location.pathname === link.path ? 'page' : undefined}
+                  className={cn(
+                    "block px-3 py-4 text-2xl font-display tracking-tight hover:text-brand-red",
+                    location.pathname === link.path && "text-brand-red"
+                  )}
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}
