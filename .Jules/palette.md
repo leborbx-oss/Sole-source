@@ -1,0 +1,3 @@
+## 2025-05-15 - [Accessibility] Implementing Skip Links in React SPAs
+**Learning:** In a Single Page Application (SPA), a "Skip to main content" link is critical for keyboard accessibility. For it to work reliably with screen readers, the target element (usually `<main>`) must have `tabIndex={-1}`. This allows the element to receive programmatic focus when the link is clicked, even if it's not a naturally focusable element. Tailwind's `sr-only` and `focus:not-sr-only` provide a clean way to manage visibility without custom CSS.
+**Action:** Always include a skip link in the root `App` component and ensure the `<main>` wrapper has a corresponding ID and `tabIndex={-1}`.
