@@ -14,10 +14,10 @@ export const Footer = () => {
               Your ultimate destination for authentic, premium sneakers. We curate the best from Nike, Adidas, Puma, and Jordan.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-neon-green transition-colors"><Instagram size={20} /></a>
-              <a href="#" className="hover:text-neon-green transition-colors"><Twitter size={20} /></a>
-              <a href="#" className="hover:text-neon-green transition-colors"><Facebook size={20} /></a>
-              <a href="#" className="hover:text-neon-green transition-colors"><Youtube size={20} /></a>
+              <a href="#" className="hover:text-neon-green transition-colors" aria-label="Follow us on Instagram"><Instagram size={20} /></a>
+              <a href="#" className="hover:text-neon-green transition-colors" aria-label="Follow us on Twitter"><Twitter size={20} /></a>
+              <a href="#" className="hover:text-neon-green transition-colors" aria-label="Follow us on Facebook"><Facebook size={20} /></a>
+              <a href="#" className="hover:text-neon-green transition-colors" aria-label="Follow us on Youtube"><Youtube size={20} /></a>
             </div>
           </div>
 
