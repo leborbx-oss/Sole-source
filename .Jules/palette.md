@@ -1,0 +1,3 @@
+## 2026-03-07 - Skip-to-content Implementation in Tailwind 4
+**Learning:** Implementing a "Skip to main content" link requires balancing accessibility with visual polish. Using `tabIndex={-1}` on the target `<main>` element allows it to receive programmatic focus from the anchor link. In Tailwind 4, applying `outline-none` to the `<main>` element prevents an unsightly focus ring from appearing around the entire content block when the skip link is used, while maintaining accessibility.
+**Action:** When adding skip links, always ensure the target has `tabIndex={-1}` and `outline-none` to manage focus state without visual noise.
