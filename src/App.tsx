@@ -50,8 +50,14 @@ export default function App() {
       <Router>
         <ScrollToTop />
         <div className="flex flex-col min-h-screen">
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] bg-white text-black px-6 py-3 font-bold border-2 border-black shadow-xl"
+          >
+            Skip to main content
+          </a>
           <Navbar />
-          <main className="flex-grow">
+          <main id="main-content" tabIndex={-1} className="flex-grow outline-none">
             <Routes>
               <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
               <Route path="/shop" element={<PageWrapper><Shop /></PageWrapper>} />
