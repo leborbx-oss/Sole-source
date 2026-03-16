@@ -19,6 +19,12 @@ export const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-white border-b border-black/5">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:bg-white focus:text-black focus:px-4 focus:py-2 focus:border-2 focus:border-black focus:m-2 focus:font-bold"
+      >
+        Skip to main content
+      </a>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
@@ -28,26 +34,37 @@ export const Navbar = () => {
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.path}
-                className={cn(
-                  "text-sm font-bold tracking-widest hover:text-brand-red transition-colors",
-                  location.pathname === link.path ? "text-brand-red" : "text-black"
-                )}
-              >
-                {link.name}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = location.pathname === link.path;
+              return (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  aria-current={isActive ? "page" : undefined}
+                  className={cn(
+                    "text-sm font-bold tracking-widest hover:text-brand-red transition-colors",
+                    isActive ? "text-brand-red" : "text-black"
+                  )}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
           </div>
 
           {/* Icons */}
           <div className="flex items-center space-x-5">
-            <button className="p-2 hover:bg-black/5 rounded-full transition-colors">
+            <button
+              aria-label="Search"
+              className="p-2 hover:bg-black/5 rounded-full transition-colors"
+            >
               <Search size={20} />
             </button>
-            <Link to="/cart" className="p-2 hover:bg-black/5 rounded-full transition-colors relative">
+            <Link
+              to="/cart"
+              aria-label={`View cart, ${totalItems} ${totalItems === 1 ? 'item' : 'items'}`}
+              className="p-2 hover:bg-black/5 rounded-full transition-colors relative"
+            >
               <ShoppingBag size={20} />
               {totalItems > 0 && (
                 <span className="absolute top-0 right-0 bg-brand-red text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full">
@@ -58,6 +75,9 @@ export const Navbar = () => {
             <button 
               className="md:hidden p-2 hover:bg-black/5 rounded-full transition-colors"
               onClick={() => setIsOpen(!isOpen)}
+              aria-label={isOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isOpen}
+              aria-controls="mobile-menu"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -69,22 +89,30 @@ export const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id="mobile-menu"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             className="md:hidden absolute top-20 left-0 w-full bg-white border-b border-black shadow-xl"
           >
             <div className="px-4 pt-2 pb-6 space-y-1">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  className="block px-3 py-4 text-2xl font-display tracking-tight hover:text-brand-red"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.name}
-                </Link>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = location.pathname === link.path;
+                return (
+                  <Link
+                    key={link.name}
+                    to={link.path}
+                    aria-current={isActive ? "page" : undefined}
+                    className={cn(
+                      "block px-3 py-4 text-2xl font-display tracking-tight hover:text-brand-red",
+                      isActive ? "text-brand-red" : "text-black"
+                    )}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                );
+              })}
             </div>
           </motion.div>
         )}
