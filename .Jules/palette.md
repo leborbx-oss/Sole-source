@@ -1,0 +1,3 @@
+## 2025-05-15 - [Accessible Navigation in SPAs]
+**Learning:** In Single Page Applications, route changes don't trigger a full page reload, which can leave screen reader users without context. Explicit ARIA markers like `aria-current="page"` for active links and a "Skip to main content" link targeting a container with `tabIndex={-1}` are essential for providing navigation feedback and allowing users to bypass repetitive header content after a route change.
+**Action:** Always implement `aria-current="page"` on navigation links and include a keyboard-accessible "Skip to main content" link in the root layout.
