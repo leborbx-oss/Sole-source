@@ -1,0 +1,3 @@
+## 2025-05-15 - Accessible Skip to Main Content Link
+**Learning:** In Single Page Applications (SPAs), screen reader users and keyboard navigators often have to tab through repetitive navigation on every page load or route change. A "Skip to main content" link, visually hidden until focused using Tailwind's `sr-only` and `focus:not-sr-only`, provides an essential shortcut. Targeting a `<main>` element with `tabIndex={-1}` ensures that focus is programmatically moved even in complex layouts.
+**Action:** Implement a skip link as a standard accessibility feature in the root layout of all SPA projects to improve efficiency for keyboard and screen reader users.
