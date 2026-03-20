@@ -14,10 +14,10 @@ export const Footer = () => {
               Your ultimate destination for authentic, premium sneakers. We curate the best from Nike, Adidas, Puma, and Jordan.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-neon-green transition-colors"><Instagram size={20} /></a>
-              <a href="#" className="hover:text-neon-green transition-colors"><Twitter size={20} /></a>
-              <a href="#" className="hover:text-neon-green transition-colors"><Facebook size={20} /></a>
-              <a href="#" className="hover:text-neon-green transition-colors"><Youtube size={20} /></a>
+              <a href="#" aria-label="Follow us on Instagram" className="hover:text-neon-green transition-colors"><Instagram size={20} /></a>
+              <a href="#" aria-label="Follow us on Twitter" className="hover:text-neon-green transition-colors"><Twitter size={20} /></a>
+              <a href="#" aria-label="Follow us on Facebook" className="hover:text-neon-green transition-colors"><Facebook size={20} /></a>
+              <a href="#" aria-label="Watch us on Youtube" className="hover:text-neon-green transition-colors"><Youtube size={20} /></a>
             </div>
           </div>
 
@@ -50,7 +50,9 @@ export const Footer = () => {
             <h4 className="font-bold text-sm tracking-widest uppercase mb-6">Newsletter</h4>
             <p className="text-white/60 text-sm mb-4">Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>
             <form className="flex flex-col space-y-3">
+              <label htmlFor="newsletter-email" className="sr-only">Newsletter Email</label>
               <input 
+                id="newsletter-email"
                 type="email" 
                 placeholder="Enter your email" 
                 className="bg-white/10 border border-white/20 px-4 py-3 text-sm focus:outline-none focus:border-neon-green transition-colors"
