@@ -19,6 +19,12 @@ export const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-white border-b border-black/5">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:px-4 focus:py-2 focus:bg-brand-red focus:text-white focus:font-bold"
+      >
+        Skip to main content
+      </a>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
@@ -32,6 +38,7 @@ export const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.path}
+                aria-current={location.pathname === link.path ? "page" : undefined}
                 className={cn(
                   "text-sm font-bold tracking-widest hover:text-brand-red transition-colors",
                   location.pathname === link.path ? "text-brand-red" : "text-black"
@@ -44,10 +51,17 @@ export const Navbar = () => {
 
           {/* Icons */}
           <div className="flex items-center space-x-5">
-            <button className="p-2 hover:bg-black/5 rounded-full transition-colors">
+            <button
+              aria-label="Search"
+              className="p-2 hover:bg-black/5 rounded-full transition-colors"
+            >
               <Search size={20} />
             </button>
-            <Link to="/cart" className="p-2 hover:bg-black/5 rounded-full transition-colors relative">
+            <Link
+              to="/cart"
+              aria-label={`View cart, ${totalItems} ${totalItems === 1 ? 'item' : 'items'}`}
+              className="p-2 hover:bg-black/5 rounded-full transition-colors relative"
+            >
               <ShoppingBag size={20} />
               {totalItems > 0 && (
                 <span className="absolute top-0 right-0 bg-brand-red text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full">
@@ -55,9 +69,11 @@ export const Navbar = () => {
                 </span>
               )}
             </Link>
-            <button 
+            <button
               className="md:hidden p-2 hover:bg-black/5 rounded-full transition-colors"
               onClick={() => setIsOpen(!isOpen)}
+              aria-label={isOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isOpen}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -79,7 +95,11 @@ export const Navbar = () => {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className="block px-3 py-4 text-2xl font-display tracking-tight hover:text-brand-red"
+                  aria-current={location.pathname === link.path ? "page" : undefined}
+                  className={cn(
+                    "block px-3 py-4 text-2xl font-display tracking-tight hover:text-brand-red",
+                    location.pathname === link.path ? "text-brand-red" : "text-black"
+                  )}
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}
