@@ -1,0 +1,3 @@
+## 2025-05-22 - Accessible Navigation & Skip Links in SPAs
+**Learning:** In Single Page Applications, route changes don't reset focus or announce the new page content to screen readers automatically. A 'Skip to main content' link targeting a `<main id="main-content" tabIndex={-1}>` element is essential for keyboard accessibility. Furthermore, icon-only buttons like the shopping cart need dynamic `aria-label` attributes that reflect the current state (e.g., item count) to provide immediate context.
+**Action:** Implement skip links in the root layout and ensure all status-driven icons have screen-reader accessible labels that update with the application state.
