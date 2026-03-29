@@ -1,0 +1,3 @@
+## 2025-05-14 - Accessible Navigation & Global Shortcuts
+**Learning:** In a single-page application (SPA), the 'Skip to main content' link is crucial because route changes don't automatically reset focus to the top of the document for screen readers. Using `tabIndex={-1}` on the `<main>` element allows it to receive programmatic focus from the skip link without being a natural tab stop. Additionally, dynamic `aria-label` values for the cart (e.g., "View cart, 2 items") provide immediate context that static icons lack.
+**Action:** Always pair a skip link with an `id="main-content"` and `tabIndex={-1}` target. Use template literals for `aria-label` on buttons/links that reflect application state (like cart counts or toggle states).
