@@ -49,9 +49,15 @@ export default function App() {
     <CartProvider>
       <Router>
         <ScrollToTop />
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-black focus:text-white focus:px-6 focus:py-3 focus:font-bold focus:tracking-widest"
+        >
+          SKIP TO MAIN CONTENT
+        </a>
         <div className="flex flex-col min-h-screen">
           <Navbar />
-          <main className="flex-grow">
+          <main id="main-content" tabIndex={-1} className="flex-grow outline-none">
             <Routes>
               <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
               <Route path="/shop" element={<PageWrapper><Shop /></PageWrapper>} />

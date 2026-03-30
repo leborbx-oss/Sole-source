@@ -1,0 +1,3 @@
+## 2025-05-15 - Accessible Navigation Patterns
+**Learning:** In this Vite/Tailwind SPA, providing a "Skip to main content" link requires a target with `tabIndex={-1}` and `outline-none` to ensure programmatic focus works without unsightly rings on the entire main container. Dynamic ARIA labels for icon-only buttons (like the shopping cart) should include state-dependent information (e.g., item count) to parity the visual experience for screen reader users.
+**Action:** Always implement `aria-current="page"` on both desktop and mobile navigation links, and ensure mobile menu toggles use `aria-expanded` and `aria-controls` linked to the menu's ID.
