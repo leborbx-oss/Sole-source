@@ -18,7 +18,13 @@ export const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white border-b border-black/5">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-white border-b border-black/5" aria-label="Main navigation">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:bg-white focus:text-black focus:px-6 focus:py-4 focus:border-b-2 focus:border-brand-red font-bold"
+      >
+        Skip to main content
+      </a>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
@@ -32,6 +38,7 @@ export const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.path}
+                aria-current={location.pathname === link.path ? "page" : undefined}
                 className={cn(
                   "text-sm font-bold tracking-widest hover:text-brand-red transition-colors",
                   location.pathname === link.path ? "text-brand-red" : "text-black"
@@ -44,13 +51,20 @@ export const Navbar = () => {
 
           {/* Icons */}
           <div className="flex items-center space-x-5">
-            <button className="p-2 hover:bg-black/5 rounded-full transition-colors">
+            <button
+              className="p-2 hover:bg-black/5 rounded-full transition-colors"
+              aria-label="Search sneakers"
+            >
               <Search size={20} />
             </button>
-            <Link to="/cart" className="p-2 hover:bg-black/5 rounded-full transition-colors relative">
+            <Link
+              to="/cart"
+              className="p-2 hover:bg-black/5 rounded-full transition-colors relative"
+              aria-label={`View shopping bag, ${totalItems} ${totalItems === 1 ? 'item' : 'items'}`}
+            >
               <ShoppingBag size={20} />
               {totalItems > 0 && (
-                <span className="absolute top-0 right-0 bg-brand-red text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full">
+                <span className="absolute top-0 right-0 bg-brand-red text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full" aria-hidden="true">
                   {totalItems}
                 </span>
               )}
@@ -58,6 +72,8 @@ export const Navbar = () => {
             <button 
               className="md:hidden p-2 hover:bg-black/5 rounded-full transition-colors"
               onClick={() => setIsOpen(!isOpen)}
+              aria-expanded={isOpen}
+              aria-label={isOpen ? "Close menu" : "Open menu"}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -79,6 +95,7 @@ export const Navbar = () => {
                 <Link
                   key={link.name}
                   to={link.path}
+                  aria-current={location.pathname === link.path ? "page" : undefined}
                   className="block px-3 py-4 text-2xl font-display tracking-tight hover:text-brand-red"
                   onClick={() => setIsOpen(false)}
                 >
