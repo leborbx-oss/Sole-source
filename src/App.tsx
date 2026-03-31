@@ -51,7 +51,7 @@ export default function App() {
         <ScrollToTop />
         <div className="flex flex-col min-h-screen">
           <Navbar />
-          <main className="flex-grow">
+          <main id="main-content" className="flex-grow" tabIndex={-1}>
             <Routes>
               <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
               <Route path="/shop" element={<PageWrapper><Shop /></PageWrapper>} />
