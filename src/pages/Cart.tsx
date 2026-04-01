@@ -54,13 +54,15 @@ export const Cart = () => {
                       <button 
                         onClick={() => updateQuantity(item.id, item.selectedSize, -1)}
                         className="p-2 hover:bg-neutral-100 transition-colors"
+                        aria-label={`Decrease quantity of ${item.name}`}
                       >
                         <Minus size={16} />
                       </button>
-                      <span className="px-4 font-bold text-sm">{item.quantity}</span>
+                      <span className="px-4 font-bold text-sm" aria-label={`Quantity: ${item.quantity}`}>{item.quantity}</span>
                       <button 
                         onClick={() => updateQuantity(item.id, item.selectedSize, 1)}
                         className="p-2 hover:bg-neutral-100 transition-colors"
+                        aria-label={`Increase quantity of ${item.name}`}
                       >
                         <Plus size={16} />
                       </button>
@@ -68,6 +70,7 @@ export const Cart = () => {
                     <button 
                       onClick={() => removeFromCart(item.id, item.selectedSize)}
                       className="text-neutral-400 hover:text-brand-red transition-colors"
+                      aria-label={`Remove ${item.name} (Size ${item.selectedSize}) from bag`}
                     >
                       <Trash2 size={20} />
                     </button>
