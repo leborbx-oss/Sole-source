@@ -32,6 +32,7 @@ export const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.path}
+                aria-current={location.pathname === link.path ? 'page' : undefined}
                 className={cn(
                   "text-sm font-bold tracking-widest hover:text-brand-red transition-colors",
                   location.pathname === link.path ? "text-brand-red" : "text-black"
@@ -44,10 +45,17 @@ export const Navbar = () => {
 
           {/* Icons */}
           <div className="flex items-center space-x-5">
-            <button className="p-2 hover:bg-black/5 rounded-full transition-colors">
+            <button
+              className="p-2 hover:bg-black/5 rounded-full transition-colors"
+              aria-label="Search"
+            >
               <Search size={20} />
             </button>
-            <Link to="/cart" className="p-2 hover:bg-black/5 rounded-full transition-colors relative">
+            <Link
+              to="/cart"
+              className="p-2 hover:bg-black/5 rounded-full transition-colors relative"
+              aria-label={totalItems === 0 ? 'View shopping bag, empty' : `View shopping bag, ${totalItems} ${totalItems === 1 ? 'item' : 'items'}`}
+            >
               <ShoppingBag size={20} />
               {totalItems > 0 && (
                 <span className="absolute top-0 right-0 bg-brand-red text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full">
@@ -58,6 +66,9 @@ export const Navbar = () => {
             <button 
               className="md:hidden p-2 hover:bg-black/5 rounded-full transition-colors"
               onClick={() => setIsOpen(!isOpen)}
+              aria-label={isOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isOpen}
+              aria-controls="mobile-menu"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -69,6 +80,7 @@ export const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id="mobile-menu"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -79,6 +91,7 @@ export const Navbar = () => {
                 <Link
                   key={link.name}
                   to={link.path}
+                  aria-current={location.pathname === link.path ? 'page' : undefined}
                   className="block px-3 py-4 text-2xl font-display tracking-tight hover:text-brand-red"
                   onClick={() => setIsOpen(false)}
                 >
