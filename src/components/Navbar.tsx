@@ -44,10 +44,17 @@ export const Navbar = () => {
 
           {/* Icons */}
           <div className="flex items-center space-x-5">
-            <button className="p-2 hover:bg-black/5 rounded-full transition-colors">
+            <button
+              aria-label="Search"
+              className="p-2 hover:bg-black/5 rounded-full transition-colors"
+            >
               <Search size={20} />
             </button>
-            <Link to="/cart" className="p-2 hover:bg-black/5 rounded-full transition-colors relative">
+            <Link
+              to="/cart"
+              aria-label={`View cart, ${totalItems} ${totalItems === 1 ? 'item' : 'items'}`}
+              className="p-2 hover:bg-black/5 rounded-full transition-colors relative"
+            >
               <ShoppingBag size={20} />
               {totalItems > 0 && (
                 <span className="absolute top-0 right-0 bg-brand-red text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full">
@@ -58,6 +65,8 @@ export const Navbar = () => {
             <button 
               className="md:hidden p-2 hover:bg-black/5 rounded-full transition-colors"
               onClick={() => setIsOpen(!isOpen)}
+              aria-label={isOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isOpen}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
