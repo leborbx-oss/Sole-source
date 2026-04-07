@@ -47,30 +47,34 @@ export const Contact = () => {
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest">Full Name</label>
+                  <label htmlFor="full-name" className="text-xs font-bold uppercase tracking-widest">Full Name</label>
                   <input 
+                    id="full-name"
                     type="text" 
                     className="w-full bg-white border border-neutral-200 px-4 py-4 focus:outline-none focus:border-black transition-colors"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest">Email Address</label>
+                  <label htmlFor="email" className="text-xs font-bold uppercase tracking-widest">Email Address</label>
                   <input 
+                    id="email"
                     type="email" 
                     className="w-full bg-white border border-neutral-200 px-4 py-4 focus:outline-none focus:border-black transition-colors"
                   />
                 </div>
               </div>
               <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-widest">Subject</label>
+                <label htmlFor="subject" className="text-xs font-bold uppercase tracking-widest">Subject</label>
                 <input 
+                  id="subject"
                   type="text" 
                   className="w-full bg-white border border-neutral-200 px-4 py-4 focus:outline-none focus:border-black transition-colors"
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-widest">Message</label>
+                <label htmlFor="message" className="text-xs font-bold uppercase tracking-widest">Message</label>
                 <textarea 
+                  id="message"
                   rows={6}
                   className="w-full bg-white border border-neutral-200 px-4 py-4 focus:outline-none focus:border-black transition-colors resize-none"
                 ></textarea>

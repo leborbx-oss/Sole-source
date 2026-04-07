@@ -1,0 +1,3 @@
+## 2025-05-15 - SPA Accessibility Fundamentals
+**Learning:** In Single Page Applications, route transitions do not automatically reset focus or notify screen readers of content changes. A "Skip to main content" link is critical for keyboard efficiency, and its target (<main>) must have tabIndex={-1} to be programmatically focusable after a skip. Additionally, icon-only buttons in persistent headers (like Search or Cart) require explicit aria-labels that update dynamically (e.g., cart count) to maintain context for screen reader users.
+**Action:** Always implement a root-level skip link as the first focusable element in App.tsx and ensure interactive icons have context-aware ARIA attributes.
