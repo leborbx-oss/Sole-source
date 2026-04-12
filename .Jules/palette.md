@@ -1,0 +1,3 @@
+## 2025-05-14 - [Accessibility Foundation in SPAs]
+**Learning:** Single Page Applications (SPAs) often lack standard browser behaviors like automatic focus reset on navigation. Providing a "Skip to main content" link and using `aria-current="page"` on navigation links are essential first steps to make the app navigable for keyboard and screen reader users. Dynamic ARIA labels on utility icons (like a cart with a badge) provide critical context that visual users get at a glance.
+**Action:** Always include a skip link as the first focusable element, ensure main content areas have a focusable target (id + tabIndex={-1}), and use dynamic labels for elements whose visual state changes (e.g., cart counts).
