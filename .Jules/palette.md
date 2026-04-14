@@ -1,0 +1,3 @@
+## 2025-05-15 - Global Navigation Accessibility
+**Learning:** In SPAs, route changes do not automatically reset focus. A "Skip to main content" link combined with a `tabIndex={-1}` on the target `<main>` element provides a critical mechanism for keyboard and screen reader users to bypass repetitive navigation. Additionally, dynamic ARIA labels for the cart (e.g., "View bag, 2 items") significantly enhance the UX for visually impaired users by providing immediate feedback on cart state.
+**Action:** Always include a "Skip to Content" link as the first focusable element in a web application. Use dynamic `aria-label` attributes for icon-only buttons that reflect current state (like cart counts or menu toggle status).
