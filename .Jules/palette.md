@@ -1,0 +1,3 @@
+## 2025-05-14 - Skip to Main Content Implementation
+**Learning:** In Single Page Applications (SPAs), route changes do not automatically reset focus, making "Skip to main content" links critical for keyboard and screen reader users to quickly access unique page content. The target element must have `tabIndex={-1}` to be programmatically focusable while avoiding a default focus ring.
+**Action:** Always include a visually hidden (but focusable) skip link as the first element in the DOM, targeting a `<main>` element with `id="main-content"` and `tabIndex={-1}`. Use Tailwind's `sr-only focus:not-sr-only` classes for standard implementation.
