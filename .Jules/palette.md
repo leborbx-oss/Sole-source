@@ -1,0 +1,3 @@
+## 2025-05-15 - Enhancing Global Navigation Accessibility
+**Learning:** In SPAs, route changes don't reset focus naturally, making "Skip to Main Content" links and explicit `aria-current` markers critical for providing immediate context to keyboard and screen reader users upon navigation. Dynamic `aria-label` updates (e.g., cart counts) ensure that assistive technology users receive real-time feedback on state changes without manual re-navigation.
+**Action:** Always implement a "Skip to Main Content" link as the first focusable element in the DOM and ensure icon-only interactive elements have descriptive, state-aware ARIA labels. Use `aria-current="page"` to programmatically identify the active route in navigation components.
