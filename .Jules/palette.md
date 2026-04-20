@@ -1,0 +1,3 @@
+## 2025-07-24 - Enhancing SPA Navigation Accessibility
+**Learning:** In Single Page Applications (SPAs), route changes do not automatically reset focus or notify screen readers of the new page context. Without explicit markers, users relying on assistive technology may lose their place or remain unaware of the current page's identity.
+**Action:** Always include a "Skip to main content" link as the first focusable element to allow keyboard users to bypass repetitive navigation. Additionally, use `aria-current="page"` on active navigation links to provide semantic context about the user's current location within the application structure.
