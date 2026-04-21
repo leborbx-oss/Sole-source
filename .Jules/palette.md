@@ -1,0 +1,3 @@
+## 2025-05-14 - Accessible Navigation & Skip Links
+**Learning:** In Single Page Applications (SPAs), the lack of native page reloads means keyboard focus is not automatically reset. Providing a "Skip to Main Content" link is essential for keyboard and screen reader users to bypass repetitive navigation. Additionally, icon-only interactive elements must always have descriptive `aria-label` attributes that reflect their current state (e.g., including item counts in a cart label).
+**Action:** Always implement a skip link as the first focusable element in the DOM, targeting a `<main id="main-content" tabIndex={-1}>`. Ensure all icon-only buttons have `aria-label` and interactive stateful components use `aria-expanded` and `aria-current` as appropriate.
