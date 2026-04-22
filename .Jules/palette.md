@@ -1,0 +1,3 @@
+## 2026-04-22 - [SPA Accessibility Fundamentals]
+**Learning:** In Single Page Applications (SPAs), route changes and UI state transitions (like opening a mobile menu) don't automatically communicate their state to assistive technologies. Without explicit markers like `aria-current="page"` and `aria-expanded`, users relying on screen readers lose context of their location and the impact of their interactions.
+**Action:** Always implement explicit accessibility markers for navigation and state-driven components. This includes `aria-current` for active links, `aria-expanded`/`aria-controls` for menus, and a "Skip to main content" link to bypass repetitive global navigation in the SPA layout.
