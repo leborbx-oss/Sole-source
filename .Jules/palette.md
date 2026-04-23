@@ -1,0 +1,3 @@
+## 2025-05-15 - Global Navigation Accessibility Patterns
+**Learning:** Icon-only interactive elements in the header and footer (like search, cart, and social links) are invisible to screen readers without explicit ARIA labels. Additionally, keyboard navigation is tedious without a "Skip to Main Content" link and visual markers for the active page.
+**Action:** Always include a "Skip to Main Content" link as the first focusable element, provide `aria-label` for icon-only buttons/links, and use `aria-current="page"` combined with visual styling for the active route to ensure a consistent "you are here" experience for all users.
