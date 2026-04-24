@@ -53,6 +53,7 @@ export const Cart = () => {
                     <div className="flex items-center border border-neutral-200">
                       <button 
                         onClick={() => updateQuantity(item.id, item.selectedSize, -1)}
+                        aria-label={`Decrease quantity of ${item.name}`}
                         className="p-2 hover:bg-neutral-100 transition-colors"
                       >
                         <Minus size={16} />
@@ -60,6 +61,7 @@ export const Cart = () => {
                       <span className="px-4 font-bold text-sm">{item.quantity}</span>
                       <button 
                         onClick={() => updateQuantity(item.id, item.selectedSize, 1)}
+                        aria-label={`Increase quantity of ${item.name}`}
                         className="p-2 hover:bg-neutral-100 transition-colors"
                       >
                         <Plus size={16} />
@@ -67,6 +69,7 @@ export const Cart = () => {
                     </div>
                     <button 
                       onClick={() => removeFromCart(item.id, item.selectedSize)}
+                      aria-label={`Remove ${item.name} from bag`}
                       className="text-neutral-400 hover:text-brand-red transition-colors"
                     >
                       <Trash2 size={20} />
