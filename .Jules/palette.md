@@ -1,0 +1,3 @@
+## 2025-05-15 - [A11y Navigation Enhancements]
+**Learning:** In Single Page Applications (SPAs), route changes do not automatically reset focus or announce the page context to screen readers. Standard accessibility patterns like "Skip to main content" links and `aria-current="page"` are critical for providing this context. Furthermore, icon-only interactive elements must always have `aria-label` or equivalent to be discoverable by assistive technologies.
+**Action:** Always include a 'Skip to main content' link as the first focusable element in the layout. Use `aria-current="page"` on navigation links matching the current route. Ensure all icon-only buttons have descriptive `aria-label` attributes.
