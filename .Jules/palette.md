@@ -1,0 +1,3 @@
+## 2025-05-15 - Enhancing SPA Accessibility and Keyboard Navigation
+**Learning:** In Single Page Applications (SPAs), route changes do not automatically reset focus or announce page changes to screen readers. Implementing a "Skip to main content" link, using `aria-current="page"` for active links, and providing descriptive ARIA labels for icon-only buttons are essential for a smooth, accessible experience. Dynamic labels for interactive elements (like a shopping cart with item counts) provide critical context that visual users get at a glance.
+**Action:** Always include a skip-to-content link and ensure all icon-only interactive elements have descriptive `aria-label` attributes in future projects.
