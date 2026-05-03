@@ -14,10 +14,10 @@ export const Footer = () => {
               Your ultimate destination for authentic, premium sneakers. We curate the best from Nike, Adidas, Puma, and Jordan.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-neon-green transition-colors"><Instagram size={20} /></a>
-              <a href="#" className="hover:text-neon-green transition-colors"><Twitter size={20} /></a>
-              <a href="#" className="hover:text-neon-green transition-colors"><Facebook size={20} /></a>
-              <a href="#" className="hover:text-neon-green transition-colors"><Youtube size={20} /></a>
+              <a href="#" className="hover:text-neon-green transition-colors" aria-label="Follow us on Instagram"><Instagram size={20} /></a>
+              <a href="#" className="hover:text-neon-green transition-colors" aria-label="Follow us on Twitter"><Twitter size={20} /></a>
+              <a href="#" className="hover:text-neon-green transition-colors" aria-label="Follow us on Facebook"><Facebook size={20} /></a>
+              <a href="#" className="hover:text-neon-green transition-colors" aria-label="Follow us on YouTube"><Youtube size={20} /></a>
             </div>
           </div>
 
@@ -53,6 +53,7 @@ export const Footer = () => {
               <input 
                 type="email" 
                 placeholder="Enter your email" 
+                aria-label="Email address for newsletter"
                 className="bg-white/10 border border-white/20 px-4 py-3 text-sm focus:outline-none focus:border-neon-green transition-colors"
               />
               <button className="bg-white text-black font-bold py-3 text-sm hover:bg-neon-green transition-colors uppercase tracking-widest">
