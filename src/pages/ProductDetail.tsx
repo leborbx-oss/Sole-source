@@ -66,11 +66,14 @@ export const ProductDetail = () => {
               <div className="flex items-center gap-4 mb-6">
                 <p className="font-display text-3xl">${product.price}</p>
                 <div className="flex items-center text-yellow-400">
-                  <Star size={16} fill="currentColor" />
-                  <Star size={16} fill="currentColor" />
-                  <Star size={16} fill="currentColor" />
-                  <Star size={16} fill="currentColor" />
-                  <Star size={16} fill="currentColor" className="text-neutral-200" />
+                  <span className="sr-only">4.5 out of 5 stars</span>
+                  <span className="flex items-center" aria-hidden="true">
+                    <Star size={16} fill="currentColor" />
+                    <Star size={16} fill="currentColor" />
+                    <Star size={16} fill="currentColor" />
+                    <Star size={16} fill="currentColor" />
+                    <Star size={16} fill="currentColor" className="text-neutral-200" />
+                  </span>
                   <span className="ml-2 text-xs text-neutral-500 font-bold">(24 REVIEWS)</span>
                 </div>
               </div>
@@ -155,7 +158,7 @@ export const ProductDetail = () => {
           <div className="space-y-12">
             {[1, 2].map((i) => (
               <div key={i} className="border-b border-neutral-100 pb-12">
-                <div className="flex items-center gap-2 text-yellow-400 mb-4">
+                <div className="flex items-center gap-2 text-yellow-400 mb-4" aria-hidden="true">
                   <Star size={14} fill="currentColor" />
                   <Star size={14} fill="currentColor" />
                   <Star size={14} fill="currentColor" />
