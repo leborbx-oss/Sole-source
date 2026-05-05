@@ -65,12 +65,12 @@ export const ProductDetail = () => {
               <h1 className="font-display text-5xl md:text-6xl tracking-tighter mb-4">{product.name}</h1>
               <div className="flex items-center gap-4 mb-6">
                 <p className="font-display text-3xl">${product.price}</p>
-                <div className="flex items-center text-yellow-400">
-                  <Star size={16} fill="currentColor" />
-                  <Star size={16} fill="currentColor" />
-                  <Star size={16} fill="currentColor" />
-                  <Star size={16} fill="currentColor" />
-                  <Star size={16} fill="currentColor" className="text-neutral-200" />
+                <div className="flex items-center text-yellow-400" aria-label="4 out of 5 stars">
+                  <Star size={16} fill="currentColor" aria-hidden="true" />
+                  <Star size={16} fill="currentColor" aria-hidden="true" />
+                  <Star size={16} fill="currentColor" aria-hidden="true" />
+                  <Star size={16} fill="currentColor" aria-hidden="true" />
+                  <Star size={16} fill="currentColor" className="text-neutral-200" aria-hidden="true" />
                   <span className="ml-2 text-xs text-neutral-500 font-bold">(24 REVIEWS)</span>
                 </div>
               </div>
