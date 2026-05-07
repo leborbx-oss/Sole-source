@@ -1,0 +1,3 @@
+## 2025-05-15 - [Navigation Accessibility in SPAs]
+**Learning:** In Single Page Applications (SPAs), route changes don't provide the same natural orientation as traditional page loads. Explicitly marking active navigation links with `aria-current="page"` and providing descriptive labels for icon-only interactive elements (like search and cart) is critical for screen reader users to maintain context.
+**Action:** Always implement `aria-current="page"` on navigation links and ensure all icon-only buttons have meaningful `aria-label` attributes. Use dynamic labels for counters (like cart items) to announce state changes to assistive technology.
