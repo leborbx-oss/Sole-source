@@ -1,0 +1,3 @@
+## 2025-05-15 - [A11y Baseline Foundation]
+**Learning:** In a React Router SPA, accessibility must be explicitly managed. The 'Skip to main content' link requires both the first-child placement in the Router and a focusable target (`tabIndex={-1}`) to work reliably. Icon-only buttons and newsletter inputs are common blind spots that significantly hinder screen reader users if they lack proper ARIA labels or associated labels.
+**Action:** Always start with the Skip Link and primary ARIA landmarks (main, nav) when auditing a new SPA. Ensure all interactive icons have `aria-label` or `sr-only` text.
