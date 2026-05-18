@@ -32,6 +32,7 @@ export const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.path}
+                aria-current={location.pathname === link.path ? "page" : undefined}
                 className={cn(
                   "text-sm font-bold tracking-widest hover:text-brand-red transition-colors",
                   location.pathname === link.path ? "text-brand-red" : "text-black"
@@ -44,19 +45,32 @@ export const Navbar = () => {
 
           {/* Icons */}
           <div className="flex items-center space-x-5">
-            <button className="p-2 hover:bg-black/5 rounded-full transition-colors">
+            <button
+              aria-label="Search"
+              className="p-2 hover:bg-black/5 rounded-full transition-colors"
+            >
               <Search size={20} />
             </button>
-            <Link to="/cart" className="p-2 hover:bg-black/5 rounded-full transition-colors relative">
+            <Link
+              to="/cart"
+              aria-label={totalItems === 0 ? "View cart" : `View cart, ${totalItems} item${totalItems === 1 ? '' : 's'}`}
+              className="p-2 hover:bg-black/5 rounded-full transition-colors relative"
+            >
               <ShoppingBag size={20} />
               {totalItems > 0 && (
-                <span className="absolute top-0 right-0 bg-brand-red text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full">
+                <span
+                  aria-hidden="true"
+                  className="absolute top-0 right-0 bg-brand-red text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full"
+                >
                   {totalItems}
                 </span>
               )}
             </Link>
             <button 
               className="md:hidden p-2 hover:bg-black/5 rounded-full transition-colors"
+              aria-label={isOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isOpen}
+              aria-controls="mobile-menu"
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -69,6 +83,7 @@ export const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id="mobile-menu"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
