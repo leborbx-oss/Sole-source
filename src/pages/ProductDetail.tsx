@@ -65,13 +65,15 @@ export const ProductDetail = () => {
               <h1 className="font-display text-5xl md:text-6xl tracking-tighter mb-4">{product.name}</h1>
               <div className="flex items-center gap-4 mb-6">
                 <p className="font-display text-3xl">${product.price}</p>
-                <div className="flex items-center text-yellow-400">
-                  <Star size={16} fill="currentColor" />
-                  <Star size={16} fill="currentColor" />
-                  <Star size={16} fill="currentColor" />
-                  <Star size={16} fill="currentColor" />
-                  <Star size={16} fill="currentColor" className="text-neutral-200" />
-                  <span className="ml-2 text-xs text-neutral-500 font-bold">(24 REVIEWS)</span>
+                <div className="flex items-center text-yellow-400" aria-label="4 out of 5 stars from 24 reviews">
+                  <div className="flex" aria-hidden="true">
+                    <Star size={16} fill="currentColor" />
+                    <Star size={16} fill="currentColor" />
+                    <Star size={16} fill="currentColor" />
+                    <Star size={16} fill="currentColor" />
+                    <Star size={16} fill="currentColor" className="text-neutral-200" />
+                  </div>
+                  <span className="ml-2 text-xs text-neutral-500 font-bold" aria-hidden="true">(24 REVIEWS)</span>
                 </div>
               </div>
               <p className="text-neutral-600 leading-relaxed">
@@ -155,12 +157,14 @@ export const ProductDetail = () => {
           <div className="space-y-12">
             {[1, 2].map((i) => (
               <div key={i} className="border-b border-neutral-100 pb-12">
-                <div className="flex items-center gap-2 text-yellow-400 mb-4">
-                  <Star size={14} fill="currentColor" />
-                  <Star size={14} fill="currentColor" />
-                  <Star size={14} fill="currentColor" />
-                  <Star size={14} fill="currentColor" />
-                  <Star size={14} fill="currentColor" />
+                <div className="flex items-center gap-2 text-yellow-400 mb-4" aria-label="5 out of 5 stars">
+                  <div className="flex" aria-hidden="true">
+                    <Star size={14} fill="currentColor" />
+                    <Star size={14} fill="currentColor" />
+                    <Star size={14} fill="currentColor" />
+                    <Star size={14} fill="currentColor" />
+                    <Star size={14} fill="currentColor" />
+                  </div>
                 </div>
                 <h4 className="font-bold text-lg mb-2">Amazing quality and fit!</h4>
                 <p className="text-neutral-600 mb-4">The materials are premium and the comfort is unmatched. Definitely worth the price for a limited edition pair.</p>
