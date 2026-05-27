@@ -13,6 +13,7 @@ export const Navbar = () => {
   const navLinks = [
     { name: 'HOME', path: '/' },
     { name: 'SHOP', path: '/shop' },
+    { name: 'ASMR GAME', path: '/shower' },
     { name: 'ABOUT', path: '/about' },
     { name: 'CONTACT', path: '/contact' },
   ];
