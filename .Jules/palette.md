@@ -1,0 +1,3 @@
+## 2026-05-28 - Skip to Main Content Accessibility Pattern
+**Learning:** In a React Router SPA, the 'Skip to main content' link must be the first child of the `<Router>` component to ensure it is the first focusable element on every page load. It requires a target with `id="main-content"` and `tabIndex={-1}` on the primary `<main>` element to handle focus correctly.
+**Action:** Always implement this pattern using the standard styling: `className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:text-black focus:px-6 focus:py-3 focus:font-bold focus:border-2 focus:border-black"`.
