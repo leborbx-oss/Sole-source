@@ -44,10 +44,17 @@ export const Navbar = () => {
 
           {/* Icons */}
           <div className="flex items-center space-x-5">
-            <button className="p-2 hover:bg-black/5 rounded-full transition-colors">
+            <button
+              className="p-2 hover:bg-black/5 rounded-full transition-colors"
+              aria-label="Search"
+            >
               <Search size={20} />
             </button>
-            <Link to="/cart" className="p-2 hover:bg-black/5 rounded-full transition-colors relative">
+            <Link
+              to="/cart"
+              className="p-2 hover:bg-black/5 rounded-full transition-colors relative"
+              aria-label={totalItems === 0 ? "Shopping bag is empty" : `Shopping bag, ${totalItems} item${totalItems === 1 ? '' : 's'}`}
+            >
               <ShoppingBag size={20} />
               {totalItems > 0 && (
                 <span className="absolute top-0 right-0 bg-brand-red text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full">
