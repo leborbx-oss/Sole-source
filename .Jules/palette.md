@@ -1,0 +1,3 @@
+## 2026-06-05 - Accessible Skip Link Pattern
+**Learning:** In a React Router SPA, the 'Skip to main content' link must be the first child of the `<Router>` component to ensure it is the first focusable element. For Tailwind CSS v4, the combination of `sr-only` and `focus:not-sr-only` along with explicit positioning (`focus:absolute focus:top-4 focus:left-4 focus:z-[100]`) and background/text contrast is required to ensure it is visible over fixed navigation bars.
+**Action:** Use this standard pattern (including `tabIndex={-1}` on the target `<main>` element) for SPA keyboard accessibility improvements.
