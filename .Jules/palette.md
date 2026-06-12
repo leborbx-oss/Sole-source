@@ -1,0 +1,3 @@
+## 2026-06-12 - Accessible Navigation: Skip to Main Content
+**Learning:** In a React Router SPA, the 'Skip to main content' link must be the first child of the layout structure to ensure it's the first focusable element on every page load. For the target `<main>` element, `tabIndex={-1}` is required to ensure keyboard focus actually moves to the element in all browsers, while `outline-none` prevents a distracting visual ring from appearing around the entire content area during programmatic focus.
+**Action:** Always implement a skip link as the first focusable element in `App.tsx` and ensure the target has `id="main-content"` and `tabIndex={-1}`.
