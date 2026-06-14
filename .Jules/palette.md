@@ -1,0 +1,3 @@
+## 2026-06-14 - [Accessibility] Standardizing Keyboard Navigation with Skip Links
+**Learning:** In a React-based SPA with fixed navigation bars, a "Skip to main content" link is essential for keyboard accessibility (WCAG 2.4.1). For the link to be effective, it must be the first focusable element in the DOM, and the target element (usually `<main>`) requires `tabIndex={-1}` and `outline-none` to receive focus programmatically without creating a visual ring around the entire content area.
+**Action:** Always implement a skip link as the first child of the router or body in new projects, and ensure the target ID matches and handles focus correctly.
