@@ -1,0 +1,3 @@
+## 2026-06-17 - [A11y] Skip to Main Content in SPAs
+**Learning:** In a React Router SPA, the 'Skip to main content' link must be the first child of the <Router> component to ensure it is the first focusable element on every page load. Additionally, the target element (usually <main>) must have `tabIndex={-1}` and `outline-none` to ensure that focus actually moves to the content area in all browsers (Chrome/Webkit) without creating a distracting visual ring.
+**Action:** Always implement skip links with `tabIndex={-1}` on the target and ensure they are positioned as the first focusable element in the DOM tree.
