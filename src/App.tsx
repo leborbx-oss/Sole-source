@@ -15,6 +15,7 @@ import { Checkout } from './pages/Checkout';
 import { About } from './pages/About';
 import { Contact } from './pages/Contact';
 import { FAQ } from './pages/FAQ';
+import { Editor } from './pages/Editor';
 import { CartProvider } from './context/CartContext';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -61,6 +62,7 @@ export default function App() {
               <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
               <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
               <Route path="/faq" element={<PageWrapper><FAQ /></PageWrapper>} />
+              <Route path="/editor" element={<PageWrapper><Editor /></PageWrapper>} />
             </Routes>
           </main>
           <Footer />
