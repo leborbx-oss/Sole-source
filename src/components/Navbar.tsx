@@ -44,10 +44,17 @@ export const Navbar = () => {
 
           {/* Icons */}
           <div className="flex items-center space-x-5">
-            <button className="p-2 hover:bg-black/5 rounded-full transition-colors">
+            <button
+              aria-label="Search sneakers"
+              className="p-2 hover:bg-black/5 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+            >
               <Search size={20} />
             </button>
-            <Link to="/cart" className="p-2 hover:bg-black/5 rounded-full transition-colors relative">
+            <Link
+              to="/cart"
+              aria-label={totalItems === 0 ? 'Shopping Bag is empty' : `Shopping Bag with ${totalItems} ${totalItems === 1 ? 'item' : 'items'}`}
+              className="p-2 hover:bg-black/5 rounded-full transition-colors relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+            >
               <ShoppingBag size={20} />
               {totalItems > 0 && (
                 <span className="absolute top-0 right-0 bg-brand-red text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full">
@@ -56,7 +63,10 @@ export const Navbar = () => {
               )}
             </Link>
             <button 
-              className="md:hidden p-2 hover:bg-black/5 rounded-full transition-colors"
+              aria-label={isOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isOpen}
+              aria-controls="mobile-menu"
+              className="md:hidden p-2 hover:bg-black/5 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -69,6 +79,7 @@ export const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id="mobile-menu"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
